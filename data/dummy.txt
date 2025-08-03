@@ -13,3 +13,5 @@ Updated auth settings
 Merging test & metrics related changes....
 
 Merging dockerfile & fastapi changes
+
+Updating docker userid details
