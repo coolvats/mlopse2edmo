@@ -66,11 +66,18 @@ def test_model_inference():
     # Prepare features for inference
     X_inference = df_processed.drop(columns=['unnamed:_0', 'sales'])
 
+    print("Input features for inference (first 5 rows):")
+    print(X_inference.head(5))
+
+    # Get actual sales values for comparison
+    actual_sales = df_processed['sales'].head(5).values
+
     # Make a prediction
     predictions = model.predict(X_inference.head(5))
     assert len(predictions) == 5, "Predictions not generated correctly."
-    print(f"Generated {len(predictions)} predictions: {predictions}")
-    print("Model inference test passed.")
+    print(f"Actual Sales (first 5): {actual_sales}")
+    print(f"Generated Predictions (first 5): {predictions}")
+    print("--- Model Inference Test Completed Successfully ---")
 
 if __name__ == "__main__":
     test_model_inference()
