@@ -41,7 +41,7 @@ jobs:
 
       - name: Git Auto Commit and Push
         env:
-          GITHUB_TOKEN: ${{ secrets.MLOPS_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "coolvats"
           git config --global user.email "vatsalyamishra93@gmail.com"
