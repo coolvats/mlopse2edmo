@@ -22,7 +22,7 @@ def load_model(path):
 model = load_model(model_path)
 
 # Define the input data model for FastAPI
-class PredictionInput(BaseModel:
+class PredictionInput(BaseModel):
     tv: float
     radio: float
     newspaper: float
