@@ -15,3 +15,5 @@ Merging test & metrics related changes....
 Merging dockerfile & fastapi changes
 
 Updating docker userid details
+
+Updating model syntax
