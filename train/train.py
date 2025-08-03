@@ -4,7 +4,7 @@ import os
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, mean_squared_error
 import pickle
 
 # Get the current script directory and project root
@@ -131,6 +131,23 @@ y_pred_test = final_gbr_model.predict(X_test)
 r2_test = r2_score(y_test, y_pred_test)
 print(f"\nR2 score on the test data: {r2_test:.4f}")
 
+# Calculate and print the Mean Squared Error on the test data
+mse_test = mean_squared_error(y_test, y_pred_test)
+print(f"Mean Squared Error on the test data: {mse_test:.4f}")
+
+# Create Metrics directory if it doesn't exist
+metrics_dir = os.path.join(project_root, 'Metrics')
+os.makedirs(metrics_dir, exist_ok=True)
+
+# Define the path for the metrics file
+metrics_path = os.path.join(metrics_dir, 'metrics.txt')
+
+# Save the R2 score and MSE to the metrics file
+with open(metrics_path, 'w') as f:
+    f.write(f"R2 Score: {r2_test:.4f}\n")
+    f.write(f"Mean Squared Error: {mse_test:.4f}\n")
+
+print(f"Metrics saved to {metrics_path}")
 
 # Save the trained model to a pkl file
 model_dir = os.path.join(project_root, 'model')
