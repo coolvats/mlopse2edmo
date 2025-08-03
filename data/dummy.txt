@@ -7,3 +7,5 @@ updated workflow1
 updated workflow steps
 
 updated github authentication
+
+Updated auth settings
