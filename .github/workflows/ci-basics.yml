@@ -37,4 +37,12 @@ jobs:
         with:
           name: trained-model
           path: ./model/
+      # ... (previous steps like Run Training Script)
 
+      - name: Git Auto Commit and Push
+        run: |
+          git config --global user.name "coolvats"
+          git config --global user.email "vatsalyamishra93@gmail.com"
+          git add ./model/
+          git commit -m "Update trained model [skip ci]" || echo "No changes to commit"
+          git push
