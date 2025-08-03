@@ -36,7 +36,7 @@ jobs:
         run: python test/test_model.py
 
       - name: Upload metrics file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
            name: metrics
            path: Metrics/metrics.txt
